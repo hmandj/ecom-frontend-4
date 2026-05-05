@@ -22,13 +22,13 @@ const UpdateProduct = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/product/${id}`
+          `https://orange-succotash-r9vg59657pvcx9p7-8080.app.github.dev/api/product/${id}`
         );
 
         setProduct(response.data);
       
         const responseImage = await axios.get(
-          `http://localhost:8080/api/product/${id}/image`,
+          `https://orange-succotash-r9vg59657pvcx9p7-8080.app.github.dev/api/product/${id}/image`,
           { responseType: "blob" }
         );
        const imageFile = await converUrlToFile(responseImage.data,response.data.imageName)
@@ -67,7 +67,7 @@ const UpdateProduct = () => {
 
   console.log("formData : ", updatedProduct)
     axios
-      .put(`http://localhost:8080/api/product/${id}`, updatedProduct, {
+      .put(`https://orange-succotash-r9vg59657pvcx9p7-8080.app.github.dev/api/product/${id}`, updatedProduct, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

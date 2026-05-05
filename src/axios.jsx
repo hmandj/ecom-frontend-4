@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:8080/api",
+  baseURL: "https://orange-succotash-r9vg59657pvcx9p7-8080.app.github.dev/api",
 });
 delete API.defaults.headers.common["Authorization"];
 export default API;
